@@ -5,6 +5,11 @@ superhero::superhero()
     _name = "";
     _age = 0;
     _superpower = 'n';
+    verbose = true;
+}
+
+void superhero::setVerbose(bool v){
+    verbose = v;
 }
 
 superhero::superhero(string name,int age, char superpower)
@@ -12,8 +17,9 @@ superhero::superhero(string name,int age, char superpower)
     _name = name;
     _age = age;
     _superpower = superpower;
+    verbose = true;
 }
-
+/*
 string superhero::set_name(string name){
     _name = name;
     return _name;
@@ -28,7 +34,7 @@ char superhero::set_superpower(char super){
     _superpower = super;
     return _superpower;
 }
-//get ağgerğir
+//get aÃ°gerÃ°ir
 string superhero::get_name(){
     return _name;
 }
@@ -40,23 +46,55 @@ int superhero::get_age(){
 char superhero::get_superpower(){
     return _superpower;
 }
-
+*/
 // find the superpower
 
-string superhero::superheropower(char superpower){
-    if(superpower == 'f'){
-        return "Flying";
-    }
-    else if(superpower == 'g'){
-        return "Giant";;
-    }
-    else if(superpower == 'h'){
-        return "Hacker";
-    }
-    else if(superpower == 'n'){
-        return "None";
+ostream& operator << (ostream& out, const superhero& hero){
+    if(hero.verbose){
+
+        out << hero._name << " ";
+        out << "(" << hero._age << "): ";
+        switch(hero._superpower)
+        {
+            case 'f':
+                out << "Flying";
+                break;
+            case 'g':
+                out << "Giant";
+                break;
+            case 'h':
+                out << "Hacker";
+                break;
+            case 'n':
+                out << "None";
+                break;
+            default:
+                out << "Weakling";
+                break;
+        }
     }
     else{
-        return "Weakling";
+        out << hero._name << " ";
+        out << hero._age << " ";
+        out << hero._superpower;
     }
+    out << endl;
+    return out;
+}
+
+istream& operator >> (istream& in, superhero& hero){
+
+    in >> hero._name >> hero._age >> hero._superpower;
+    return in;
+}
+
+void superhero::create_hero(superhero& hero){
+
+    cout << "hero name: ";
+    cin >> hero._name;
+    cout << "hero age: ";
+    cin >> hero._age;
+    cout << "choose (f - Flying), (g - Giant), (h - Hacker), (n - None)" <<endl;
+    cout << "hero power: ";
+    cin >> hero._superpower;
 }
