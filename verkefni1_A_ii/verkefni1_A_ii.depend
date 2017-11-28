@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1511822642 source:l:\onedrive\hr haustönn 2017\tölvuhögun\verkefni1_a_ii\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
