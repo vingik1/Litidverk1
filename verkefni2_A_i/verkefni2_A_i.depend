@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1511833818 source:l:\onedrive\hr haustönn 2017\verknámskeiğ\verkefni2_a_i\main.cpp
+	<iostream>
+	<string>
+	"superhero.h"
+
+1511834001 l:\onedrive\hr haustönn 2017\verknámskeiğ\verkefni2_a_i\include\superhero.h
+	<iostream>
+	<string>
+	"superhero.h"
+
+1511834012 source:l:\onedrive\hr haustönn 2017\verknámskeiğ\verkefni2_a_i\src\superhero.cpp
+	"superhero.h"
+
